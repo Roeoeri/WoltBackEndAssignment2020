@@ -4,6 +4,7 @@ const app = express()
 const db = require('./restaurants.json')
 
 const middleware = require( './utils/middleware.js')
+const searchTool = require('./services/searchTool.js')
 
 
 app.get('/restaurants/search', (req,res) =>{
@@ -12,33 +13,9 @@ app.get('/restaurants/search', (req,res) =>{
   }
 
   const keyword = req.query.q.toUpperCase()
-  console.log(keyword)
+  const restaurantsList = db.restaurants
+  const result = searchTool.searchRestaurants(restaurantsList,keyword)
 
-  const searchFromNameDescAndTags = (restaurant) =>{
-    const name = restaurant.name.toUpperCase()
-    const description = restaurant.description.toUpperCase()
-    const tags = restaurant.tags
-
-    let match = false
-
-    if(name.includes(keyword)){
-      match = true
-    }
-
-    if(description.includes(keyword)){
-      match = true
-    }
-
-    tags.forEach(tag => {
-      if(tag.toUpperCase().includes(keyword)){
-        match = true
-      }
-    });
-    return match
-  }
-  const result = db.restaurants.filter(searchFromNameDescAndTags)
-
-  
   res.send(result)
   
 })
