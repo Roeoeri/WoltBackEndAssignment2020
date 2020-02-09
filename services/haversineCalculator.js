@@ -1,24 +1,22 @@
-const distanceBetweenLocations = (lat1,lon1,lat2,lon2) =>{
-    const r = 6371
+const convertToRadians = (degrees) => degrees * (Math.PI / 180.0);
 
-    let dLat = convertToRadians(lat2-lat1)
-    let dLon = convertToRadians(lon2-lon1)
+const distanceBetweenLocations = (lat1, lon1, lat2, lon2) => {
+  const r = 6371;
 
-    lat1 = convertToRadians(lat1)
-    lat2 = convertToRadians(lat2)
+  const dLatRadians = convertToRadians(lat2 - lat1);
+  const dLonRadians = convertToRadians(lon2 - lon1);
 
-    let a = Math.pow(Math.sin(dLat/2),2) + Math.pow(Math.sin(dLon/2),2)*Math.cos(lat1)* Math.cos(lat2)
-    let c = 2*Math.atan2(Math.sqrt(a), Math.sqrt(1-a))
+  const lat1Radians = convertToRadians(lat1);
+  const lat2Radians = convertToRadians(lat2);
 
-    return r*c
-    
-}
+  const a = Math.sin(dLatRadians / 2) ** 2
+  + Math.sin(dLonRadians / 2) ** 2 * Math.cos(lat1Radians) * Math.cos(lat2Radians);
 
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 
-const convertToRadians = (degrees) =>{
-    return degrees*(Math.PI/180.0)
-}
+  return r * c;
+};
 
 module.exports = {
-    distanceBetweenLocations
-}
+  distanceBetweenLocations,
+};

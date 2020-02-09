@@ -1,10 +1,11 @@
-const express = require('express')
-const searchRouter = require('./controllers/search')
-const middleware = require('./utils/middleware')
-const app = express()
+const express = require('express');
+const searchRouter = require('./controllers/search');
+const middleware = require('./utils/middleware');
 
-app.get('/restaurants/search', searchRouter) 
+const app = express();
 
-app.use(middleware.unknownEndpoint)
+app.get('/restaurants/search', searchRouter);
 
-module.exports = app
+app.use(middleware.unknownEndpoint);
+
+module.exports = app;

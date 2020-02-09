@@ -1,9 +1,8 @@
-require('dotenv').config()
+require('dotenv').config();
 
-let DATABASE = 'restaurants.json'
+let DATABASE = 'restaurants.json';
 
-if(process.env.NODE_ENV === 'test'){
-    DATABASE = 'testrestaurants.json'
+if (process.env.NODE_ENV === 'test') {
+  DATABASE = 'testrestaurants.json';
 }
-module.exports = DATABASE
-
+module.exports = DATABASE;
