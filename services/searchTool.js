@@ -1,4 +1,4 @@
-const havesine = require('./haversineCalculator')
+const haversine = require('./haversineCalculator')
 const searchDistance = 3
 
 const searchRestaurants = (restaurantList, keyword, latitudeAtStart, longitudeAtStart) =>{
@@ -10,7 +10,7 @@ const searchRestaurants = (restaurantList, keyword, latitudeAtStart, longitudeAt
         const restaurantLatitude = restaurant.location[1]
         const restaurantLongitude = restaurant.location[0]
 
-        const distance = havesine.distanceBetweenLocations(latitudeAtStart,longitudeAtStart,restaurantLatitude,restaurantLongitude)
+        const distance = haversine.distanceBetweenLocations(latitudeAtStart,longitudeAtStart,restaurantLatitude,restaurantLongitude)
 
         if(distance > searchDistance){
             return false
