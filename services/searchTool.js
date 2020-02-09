@@ -1,10 +1,21 @@
-const searchRestaurants = (restaurantList, keyword) =>{
+const havesine = require('./haversineCalculator')
+const searchDistance = 3
+
+const searchRestaurants = (restaurantList, keyword, latitudeAtStart, longitudeAtStart) =>{
 
     const filterFromNameDescAndTags = (restaurant) =>{
         const name = restaurant.name.toUpperCase()
         const description = restaurant.description.toUpperCase()
         const tags = restaurant.tags
-    
+        const restaurantLatitude = restaurant.location[1]
+        const restaurantLongitude = restaurant.location[0]
+
+        const distance = havesine.distanceBetweenLocations(latitudeAtStart,longitudeAtStart,restaurantLatitude,restaurantLongitude)
+
+        if(distance > searchDistance){
+            return false
+        }
+
         let match = false
     
         if(name.includes(keyword)){

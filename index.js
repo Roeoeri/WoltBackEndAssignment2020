@@ -7,14 +7,18 @@ const middleware = require( './utils/middleware.js')
 const searchTool = require('./services/searchTool.js')
 
 
+
 app.get('/restaurants/search', (req,res) =>{
   if(middleware.queryContainsErrors(req,res)){
     return
   }
 
   const keyword = req.query.q.toUpperCase()
+  const lat = req.query.lat
+  const lon = req.query.lon
+
   const restaurantsList = db.restaurants
-  const result = searchTool.searchRestaurants(restaurantsList,keyword)
+  const result = searchTool.searchRestaurants(restaurantsList,keyword,lat,lon)
 
   res.send(result)
   
