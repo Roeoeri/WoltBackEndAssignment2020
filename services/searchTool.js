@@ -3,7 +3,7 @@ const searchDistance = 3
 
 const searchRestaurants = (restaurantList, keyword, latitudeAtStart, longitudeAtStart) =>{
 
-    const filterFromNameDescAndTags = (restaurant) =>{
+    const filterNearRestaurantsFromNameDescAndTags = (restaurant) =>{
         const name = restaurant.name.toUpperCase()
         const description = restaurant.description.toUpperCase()
         const tags = restaurant.tags
@@ -34,7 +34,7 @@ const searchRestaurants = (restaurantList, keyword, latitudeAtStart, longitudeAt
         return match
       }
 
-       return restaurantList.filter(filterFromNameDescAndTags)
+       return restaurantList.filter(filterNearRestaurantsFromNameDescAndTags)
 }
 
 module.exports = {
