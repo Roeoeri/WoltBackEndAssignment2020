@@ -8,5 +8,7 @@ This guide assumes that the reader has the latest version of NodeJs installed. A
 3. Run command `npm start`
 4. Server is now open at http://localhost:3001/ . Queries to the back end can be made for example like this:
 http://localhost:3001/restaurants/search?q=sushi&lat=60.17045&lon=24.93147
+5. Pressing CTRL + C at the command line closes the server.
+6. In case that reader wants to run the tests, that can be done by running command `npm test`
 
 
