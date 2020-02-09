@@ -1,14 +1,9 @@
+const app = require('./app')
+const http = require('http')
 
-const express = require('express')
-const searchRouter = require('./controllers/search')
-const middleware = require('./utils/middleware')
-const app = express()
-
-app.get('/restaurants/search', searchRouter) 
-
-app.use(middleware.unknownEndpoint)
+const server = http.createServer(app)
 
 const PORT = 3001
-app.listen(PORT, () => {
+server.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
 })
