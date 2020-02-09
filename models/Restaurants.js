@@ -1,7 +1,10 @@
-const haversine = require('./haversineCalculator')
+const db = require('../restaurants.json')
+const haversine = require('../services/haversineCalculator')
+
+const restaurantList = db.restaurants
 const searchDistance = 3
 
-const searchRestaurants = (restaurantList, keyword, latitudeAtStart, longitudeAtStart) =>{
+const searchRestaurants = (keyword, latitudeAtStart, longitudeAtStart) =>{
 
     const filterNearRestaurantsFromNameDescAndTags = (restaurant) =>{
         const name = restaurant.name.toUpperCase()
