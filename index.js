@@ -20,7 +20,7 @@ app.get('/restaurants/search', (req,res) =>{
   const restaurantsList = db.restaurants
   const result = searchTool.searchRestaurants(restaurantsList,keyword,lat,lon)
 
-  res.send(result)
+  res.json(result)
   
 })
 
