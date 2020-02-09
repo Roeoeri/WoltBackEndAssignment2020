@@ -1,4 +1,5 @@
-const db = require('../restaurants.json')
+const DATABASE = require('../config/config')
+const db = require(`../${DATABASE}`)
 const haversine = require('../services/haversineCalculator')
 
 const restaurantList = db.restaurants

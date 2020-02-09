@@ -1,0 +1,58 @@
+{
+    "restaurants": [
+        {
+            "blurhash": "UUKJMXv|x]oz0gtRM{V@AHRQwvxZXSs9s;o0",
+            "city": "Helsinki",
+            "currency": "EUR",
+            "delivery_price": 390,
+            "description": "Asenneburgeri",
+            "image": "https://prod-wolt-venue-images-cdn.wolt.com/5b348b31fe8992000bbec771/2be8c7738b220df2f9a0974da5c90d90",
+            "location": [
+                24.941325187683105,
+                60.169938852212965
+            ],
+            "name": "Social Burgerjoint Citycenter",
+            "online": false,
+            "tags": [
+                "hamburger",
+                "fries"
+            ]
+        },
+        {
+            "blurhash": "U8INy*D+KjIW%3pZ$yx[5T0Lv|_1.3m,0z9h",
+            "city": "Helsinki",
+            "currency": "EUR",
+            "delivery_price": 390,
+            "description": "Japanilaista ramenia parhaimmillaan",
+            "image": "https://prod-wolt-venue-images-cdn.wolt.com/5d108aa82e757db3f4946ca9/d88ebd36611a5e56bfc6a60264fe3f81",
+            "location": [
+                24.941786527633663,
+                60.169934599421396
+            ],
+            "name": "Momotoko Citycenter",
+            "online": false,
+            "tags": [
+                "ramen",
+                "risotto"
+            ]
+        },
+        {
+            "blurhash": "UdI3~;Ip0}Rk={bH9]oJW.RjnlbvNeV@xtbI",
+            "city": "Helsinki",
+            "currency": "EUR",
+            "delivery_price": 390,
+            "description": "Tuoretta ja laadukasta sushia",
+            "image": "https://prod-wolt-venue-images-cdn.wolt.com/5ad7050b879256000b477e16/705b6f09e5e4b33779b45afffb994cac",
+            "location": [
+                24.94049370288849,
+                60.16995648878383
+            ],
+            "name": "Luckiefun's Kaivokatu",
+            "online": false,
+            "tags": [
+                "sushi",
+                "japanese"
+            ]
+        }
+    ]
+}
